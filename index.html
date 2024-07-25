@@ -368,15 +368,17 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
                         <div class="text-center my-5">
-                            <a href="aboutme.html" style="text-decoration: none;" >
-                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me <i class="akar-icons--link-out"></i></span>
+                            <a href="aboutme.html" style="text-decoration: none;">
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me <i
+                                            class="akar-icons--link-out"></i></span>
                                 </h2>
                             </a>
                             <p class="lead fw-light mb-4">My name is <b>Janarthanan Krishnamoorthy</b> and I'm currently
                                 pursuing <b>Master's in Information Science at University of Pittsburgh</b></p>
                             <p class="text-muted">My academic journey
                                 began with a Bachelor of Engineering in Computer Science from PSG College of Technology
-                                (Anna University) in 2018, where I spent four enriching years, driven by a deep passion for technology. Following graduation, I
+                                (Anna University) in 2018, where I spent four enriching years, driven by a deep passion
+                                for technology. Following graduation, I
                                 gained valuable experience as a Software Engineer at Software AG Private Ltd. Through my
                                 professional experiences, I discovered the pivotal role of data in shaping our world,
                                 leading me to further my studies in Information Science. My enthusiasm for technology is
@@ -395,7 +397,52 @@
                     </div>
                 </div>
             </div>
+            <center>
+                <div class="achievements">
+                    <div class="text-gradient d-inline">
+                        <span class="count" data-target="2">0</span>+ Years of SWE Experience
+                    </div>
+                    <div class="text-gradient d-inline">
+                        <span class="count" data-target="1000">0</span>+ Problems solved on Leetcode
+                    </div>
+                    <div class="text-gradient d-inline">
+                        <span class="count" data-target="2">0</span>+ Research Papers Published (IEEE)
+                    </div>
+                    <div class="text-gradient d-inline">
+                        <span class="count" data-target="4">0</span>+ Hackathons won
+                    </div>
+                </div>
+            </center>
+
         </section>
+
+        <script>
+            function animateCounts() {
+                const counters = document.querySelectorAll('.count');
+                counters.forEach(counter => {
+                    counter.innerText = '0'; // Reset count to 0 before starting animation
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const increment = target / 100;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 30);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                animateCounts();
+                setInterval(animateCounts, 15000); // Repeat every 15 seconds
+            });
+        </script>
+
     </main>
     <!-- Footer-->
     <footer class="bg-white py-4 mt-auto">
