@@ -11975,3 +11975,23 @@ html {
   font-weight: bold;
   color: #007bff;
 }
+
+.hero-actions .btn {
+  font-size: 0.875rem;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 auto;
+    min-width: calc(50% - 0.25rem);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.8125rem;
+  }
+}
