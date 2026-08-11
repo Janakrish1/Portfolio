@@ -1,0 +1,7 @@
+# Local resume files — keep out of version control
+Resumes/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
